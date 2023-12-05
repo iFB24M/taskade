@@ -1,11 +1,24 @@
 .sidebar {
+	transition: transform .5s, margin-top .5s, width .8s;
 	width: 250px;
 	padding: 16px;
 	height: 100vh;
 	position: fixed;
 
-	// border-right: #eee 1px solid;
 	background-color: var(--additional-color);
+
+	@media (max-width: 767px) {
+		transform: translateX(-100%);
+		margin-top: 51px;
+
+	}
+
+	&.opened {
+		@media (max-width: 767px) {
+			transform: translateX(0);
+			width: 100%;
+		}
+	}
 }
 
 .menu {

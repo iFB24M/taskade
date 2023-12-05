@@ -1,7 +1,11 @@
 .list {
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 16px;
+
+	@media (max-width: 992px) {
+		grid-template-columns: 1fr;
+	}
 }
 
 .task {
@@ -56,4 +60,21 @@
 	align-items: center;
 	gap: 8px;
 	margin-top: 8px;
+}
+
+.categories {
+	margin-bottom: 16px;
+	display: flex;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.category {
+	padding: 7px 16px;
+	background-color: var(--additional-color);
+	border-radius: 16px;
+
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }

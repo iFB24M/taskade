@@ -5,6 +5,15 @@ import { Link } from 'react-router-dom'
 const Tasks = () => {
 	return (
 		<div>
+			<div className={styles.categories}>
+				<Link to="/tasks" className={styles.category}>Работа</Link>
+				<Link to="/tasks" className={styles.category}>Дизайн</Link>
+				<Link to="/tasks" className={styles.category}>Домашние дела</Link>
+				<Link to="/tasks" className={styles.category}>Учеба</Link>
+				<Link to="/tasks" className={styles.category}>Другое</Link>
+				<input className={styles.category} placeholder="Новая категория" />
+				<Link to="/tasks" className={styles.category}><Icon icon="add_circle" /> добавить</Link>
+			</div>
 			<div className={styles.list}>
 				<Link to="/task/0" className={`${styles.task} ${styles.pending}`}>
 					<span className={styles.taskLabel}>Не начато</span>

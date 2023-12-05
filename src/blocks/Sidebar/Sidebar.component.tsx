@@ -13,9 +13,13 @@ const changeTheme = () => {
 	location.reload()
 }
 
-const Sidebar = () => {
+export interface SidebarProps {
+	isOpened?: boolean
+}
+
+const Sidebar = (props: SidebarProps) => {
 	return (
-		<div className={styles.sidebar}>
+		<div className={`${styles.sidebar} ${props.isOpened ? styles.opened : ''}`}>
 			<div className={styles.user}>
 				<Icon icon="account_circle" /> Имя пользователя
 			</div>
