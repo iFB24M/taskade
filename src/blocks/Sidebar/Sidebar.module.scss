@@ -1,0 +1,48 @@
+.sidebar {
+	width: 250px;
+	padding: 16px;
+	height: 100vh;
+	position: fixed;
+
+	border-right: #eee 1px solid;
+}
+
+.menu {
+	margin-top: 16px;
+}
+
+.item {
+	padding: 8px;
+
+	&:hover {
+		background-color: #f9f9f9;
+		border-radius: 16px;
+		cursor: pointer;
+	}
+}
+
+.subitem {
+	padding: 4px;
+	margin-left: 8px;
+
+	&:hover {
+		background-color: #f5f5f5;
+		border-radius: 8px;
+		cursor: pointer;
+	}
+
+}
+
+.item,
+.subitem {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	user-select: none;
+}
+
+.user {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
