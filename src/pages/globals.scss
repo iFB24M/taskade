@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  color: #000;
+  color: var(--foreground-color);
   background-color: transparent;
   border: 0;
   outline: 0;
@@ -10,4 +10,8 @@
 
 a {
   text-decoration: none;
+}
+
+body {
+  background-color: var(--background-color);
 }
