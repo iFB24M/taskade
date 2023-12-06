@@ -2,7 +2,7 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	width: 100%;
-	overflow: hidden;
+	gap: 24px;
 
 	@media (max-width: 1200px) {
 		grid-template-columns: 1fr;
@@ -37,6 +37,10 @@
 	max-width: 100%;
 	justify-content: space-between;
 
+	@media (max-width: 560px) {
+		gap: 42px;
+	}
+
 	* {
 		color: #333;
 	}
@@ -64,6 +68,11 @@
 	&:nth-child(1) {
 		grid-column-start: 1;
 		grid-column-end: 3;
+
+		@media (max-width: 560px) {
+			grid-column-start: 1;
+			grid-column-end: 1;
+		}
 	}
 
 	&:nth-child(2) {
@@ -78,16 +87,19 @@
 			grid-row-start: 2;
 			grid-row-end: 3;
 		}
+
+		@media (max-width: 560px) {
+			grid-column-start: 1;
+			grid-column-end: 1;
+		}
 	}
 }
 
 .taskTitle {
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
 	width: 100%;
+	hyphens: auto;
 
-	@media (max-width: 560px) {
+	@media (max-width: 992px) {
 		font-size: 18px !important;
 	}
 }

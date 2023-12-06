@@ -8,9 +8,7 @@
 	display: flex;
 	align-items: flex-start;
 	flex-direction: column;
-	background-color: var(--additional-color);
-	padding: 16px;
-	border-radius: 16px;
+	margin-bottom: 16px;
 
 	&.pending {
 		border-left: #C3B0FF 16px solid;
@@ -56,3 +54,36 @@
 	gap: 8px;
 	margin-top: 8px;
 }
+
+.comments {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.comment {}
+
+.author {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 16px;
+}
+
+.avatar {
+	max-width: 40px;
+	border-radius: 999px;
+}
+
+.authorName {
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.date {
+	font-size: 14px;
+	color: var(--foreground-color);
+	opacity: .5;
+}
+
+.text {}
