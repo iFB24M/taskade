@@ -1,6 +1,4 @@
-
-import { Suspense, lazy } from 'react'
-import './App.css'
+import { lazy } from 'react'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
@@ -9,18 +7,19 @@ const Tasks = lazy(() => import('./pages/tasks/page'))
 const Task = lazy(() => import('./pages/task/page'))
 const Layout = lazy(() => import('./pages/Layout'))
 
-export const App = () => {
+const App = () => {
   return (
-    <Suspense fallback={<>Loading...</>}>
-      <BrowserRouter>
-        <Routes>
-          <Route Component={Layout}>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="/tasks" element={<Tasks />}></Route>
-            <Route path="/task/*" element={<Task />}></Route>
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </Suspense>
+    <BrowserRouter>
+      <Routes>
+        <Route Component={Layout}>
+          <Route path="/tasks" element={<Tasks />}></Route>
+          <Route path="/tasks/:status" element={<Tasks />}></Route>
+          <Route path="/task/*" element={<Task />}></Route>
+          <Route path="/*" element={<Home />}></Route>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
+
+export default App

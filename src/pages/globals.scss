@@ -1,3 +1,10 @@
+:root {
+  --task-not-started: #C3B0FF;
+  --task-pending: #FFBD92;
+  --task-done: #95EAFF;
+  --task-canceled: rgb(255, 149, 149);
+}
+
 * {
   margin: 0;
   padding: 0;

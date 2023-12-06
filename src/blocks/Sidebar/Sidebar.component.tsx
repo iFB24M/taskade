@@ -29,10 +29,10 @@ const Sidebar = (props: SidebarProps) => {
 				</div>
 				<Link to="/" className={styles.item}><Icon icon="home" />Главная</Link>
 				<Link to="/tasks" className={styles.item}><Icon icon="list" />Задачи</Link>
-				<div className={styles.subitem}><Icon icon="not_started" /> Не начатые</div>
-				<div className={styles.subitem}><Icon icon="pending" /> В процессе</div>
-				<div className={styles.subitem}><Icon icon="check_circle" /> Выполненые</div>
-				<div className={styles.subitem}><Icon icon="cancel" /> Отмененые</div>
+				<Link to="/tasks/not-started" className={styles.subitem}><Icon icon="not_started" /> Не начатые</Link>
+				<Link to="/tasks/pending" className={styles.subitem}><Icon icon="pending" /> В процессе</Link>
+				<Link to="/tasks/done" className={styles.subitem}><Icon icon="check_circle" /> Выполненые</Link>
+				<Link to="/tasks/canceled" className={styles.subitem}><Icon icon="cancel" /> Отмененые</Link>
 				<div className={styles.item}><Icon icon="calendar_month" /> Календарь</div>
 			</div>
 		</div>

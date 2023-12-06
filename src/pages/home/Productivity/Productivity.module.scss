@@ -1,0 +1,116 @@
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	width: 100%;
+	overflow: hidden;
+
+	@media (max-width: 1200px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.weekDays {
+	display: flex;
+	height: 240px;
+	gap: 16px;
+}
+
+.weekDay {
+	width: 32px;
+	height: 100%;
+	background-color: var(--additional-color);
+	border-radius: 16px;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		background-color: #000;
+		bottom: 4px;
+		left: 4px;
+		width: calc(100% - 8px);
+		height: calc(100% - 8px);
+		border-radius: 16px;
+
+		animation: growUp .5s;
+	}
+}
+
+@keyframes growUp {
+	from {
+		height: 0%;
+	}
+}
+
+
+.weekDay1 {
+	&::before {
+		height: 25%;
+		background-color: var(--task-canceled);
+	}
+}
+
+.weekDay2 {
+	&::before {
+		height: 50%;
+		background-color: var(--task-pending);
+	}
+}
+
+.weekDay3 {
+	&::before {
+		height: 75%;
+		background-color: var(--task-pending);
+	}
+}
+
+.weekDay4 {
+	&::before {
+		height: calc(100% - 8px);
+		background-color: var(--task-done);
+	}
+}
+
+.weekDayWrapper {
+	display: flex;
+	flex-direction: column;
+	border-radius: 0;
+	gap: 8px;
+	align-items: center;
+}
+
+.weekLabel {
+	color: var(--foreground-color);
+	font-weight: 500;
+}
+
+.label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.legend {
+	display: flex;
+	gap: 16px;
+	margin-block: 16px;
+}
+
+.badge {
+	width: 24px;
+	height: 24px;
+	background-color: #fff;
+	border-radius: 8px;
+}
+
+.badgeBad {
+	background-color: var(--task-canceled);
+}
+
+.badgeGood {
+	background-color: var(--task-pending);
+}
+
+.badgePerfect {
+	background-color: var(--task-done);
+}
