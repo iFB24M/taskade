@@ -1,8 +1,10 @@
+import { Title2 } from '@/ui/components/Title2/Title2.component'
 import styles from './Productivity.module.scss'
 
 export const Productivity = () => {
 	return (
-		<div className={styles.grid}>
+		<div>
+			<Title2>Продуктивность</Title2>
 			<div className={styles.productivity}>
 				<div className={styles.legend}>
 					<div className={styles.label}>

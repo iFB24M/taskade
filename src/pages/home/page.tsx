@@ -5,6 +5,7 @@ import { Icon } from '@/ui/components/Icon/Icon.component';
 import { Link } from 'react-router-dom';
 import { Productivity } from './Productivity/Productivity.component';
 import { useEffect, useState } from 'react';
+import { Title2 } from '@/ui/components/Title2/Title2.component';
 
 const useMaxWidth = (maxWidth: number) => {
 	const [matchWidth, setMatchWidth] = useState(false)
@@ -13,6 +14,8 @@ const useMaxWidth = (maxWidth: number) => {
 
 	useEffect(() => {
 		window.matchMedia(`(max-width: ${maxWidth}px)`).addEventListener('change', updateMatch)
+
+		updateMatch()
 
 		return () => {
 			window.matchMedia(`(max-width: ${maxWidth}px)`).removeEventListener('change', updateMatch)
@@ -30,6 +33,7 @@ const Home = () => {
 			<Title1 className={styles.title}>
 				Привет, имя
 			</Title1>
+			<Title2 className={styles.subtitle}>Ваши задачи</Title2>
 			<div className={styles.grid}>
 				<div className={styles.tasks}>
 					<Link to="/tasks/not-started" className={`${styles.task} ${styles.notStarted}`}>

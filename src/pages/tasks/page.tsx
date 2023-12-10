@@ -1,44 +1,43 @@
 import styles from './page.module.scss'
 import { Icon } from '@/ui/components/Icon/Icon.component'
 import { Link } from 'react-router-dom'
-import { FormEvent, useEffect, useState } from 'react';
+// import { FormEvent, useEffect, useState } from 'react';
+import { Title2 } from '@/ui/components/Title2/Title2.component'
 
-const addTask = (e: FormEvent<HTMLFormElement>) => {
-	e.preventDefault();
+// const addTask = (e: FormEvent<HTMLFormElement>) => {
+// 	e.preventDefault();
 
-	const formData = new FormData(e.target as HTMLFormElement)
+// 	const formData = new FormData(e.target as HTMLFormElement)
 
-	const taskTitle = ((e.target as HTMLElement).querySelector('#task-title') as HTMLInputElement)?.value
+// 	const taskTitle = ((e.target as HTMLElement).querySelector('#task-title') as HTMLInputElement)?.value
 
-	fetch('http://127.0.0.1:5000/add', {
-		method: 'post',
-		mode: 'no-cors',
-		body: formData
-	})
+// 	fetch('http://127.0.0.1:5000/add', {
+// 		method: 'post',
+// 		mode: 'no-cors',
+// 		body: formData
+// 	})
 
-	console.log(`Добавление ${taskTitle}`)
+// 	console.log(`Добавление ${taskTitle}`)
 
-}
+// }
 
 const Tasks = () => {
-	const [data, setData] = useState<string | false>(false)
+	// const [data, setData] = useState<string | false>(false)
 
-	useEffect(() => {
-		const getData = async () => {
-			const response = await fetch('http://127.0.0.1:5000')
-			const json = await response.text()
-			console.log(response)
-			setData(json)
-		}
-		getData()
-	}, [])
-
-
+	// useEffect(() => {
+	// 	const getData = async () => {
+	// 		const response = await fetch('http://127.0.0.1:5000')
+	// 		const json = await response.text()
+	// 		console.log(response)
+	// 		setData(json)
+	// 	}
+	// 	getData()
+	// }, [])
 
 	return (
 		<div>
+			<Title2 className={styles.title}>Задачи</Title2>
 			<div className={styles.categories}>
-				{data}
 				<Link to="/tasks" className={styles.category}>Работа</Link>
 				<Link to="/tasks" className={styles.category}>Дизайн</Link>
 				<Link to="/tasks" className={styles.category}>Домашние дела</Link>
@@ -47,7 +46,7 @@ const Tasks = () => {
 				<input className={styles.category} placeholder="Новая категория" name="new-category-name" />
 				<Link to="/tasks" className={`${styles.category} ${styles.iconcategory}`}><Icon icon="add_circle" /> добавить</Link>
 			</div>
-			<form className={styles.add} onSubmit={addTask}>
+			<form className={styles.add}>
 				<input type="text" id="task-title" name="todo" placeholder='Добавить задачу' />
 				<button type="submit">Добавить</button>
 			</form>
